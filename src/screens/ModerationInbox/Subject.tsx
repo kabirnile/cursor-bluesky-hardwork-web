@@ -13,7 +13,7 @@ import {SubjectPreview} from './components/SubjectPreview'
 import {Timeline} from './components/Timeline'
 
 const ANTI_HARASSMENT =
-  'https://bsky.social/about/support/community-guidelines#:~:text=coordinated%20harassment%20campaigns.-,Anti%2DHarassment,-%3A%20We%20create%20space'
+  'https://pds.itsmyturn.online/about/support/community-guidelines#:~:text=coordinated%20harassment%20campaigns.-,Anti%2DHarassment,-%3A%20We%20create%20space'
 
 export function ModerationInboxSubjectDetailsScreen() {
   const t = useTheme()

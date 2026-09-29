@@ -30,7 +30,7 @@ export const CopyrightPolicyScreen = (_props: Props) => {
               The Copyright Policy has been moved to{' '}
               <TextLink
                 style={pal.link}
-                href="https://bsky.social/about/support/copyright"
+                href="https://pds.itsmyturn.online/about/support/copyright"
                 text="bsky.social/about/support/copyright"
               />
             </Trans>

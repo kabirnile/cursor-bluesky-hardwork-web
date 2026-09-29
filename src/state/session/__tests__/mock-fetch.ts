@@ -10,7 +10,7 @@ import {type SessionAccount} from '../types'
 
 export const DID = 'did:plc:example123'
 export const HANDLE = 'alice.test'
-export const SERVICE = 'https://bsky.social'
+export const SERVICE = 'https://pds.itsmyturn.online'
 /** A PDS host an account may be pinned to by its stored `pdsUrl`. */
 export const PDS_HOST = 'https://shimeji.us-east.host.bsky.network'
 /** A different PDS host, delivered by the didDoc a refresh returns. */

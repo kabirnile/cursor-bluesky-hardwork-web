@@ -475,7 +475,7 @@ export function ModerationScreenInner({
                         to=""
                         onPress={evt => {
                           evt.preventDefault()
-                          void Linking.openURL('https://bsky.app/')
+                          void Linking.openURL('https://itsmyturn.online/')
                           return false
                         }}>
                         bsky.app

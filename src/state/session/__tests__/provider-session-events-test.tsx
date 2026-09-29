@@ -130,7 +130,7 @@ import {
 import {type SessionApiContext} from '#/state/session/types'
 
 const DID = 'did:plc:example123'
-const SERVICE = 'https://bsky.social/'
+const SERVICE = 'https://pds.itsmyturn.online/'
 
 function makeAccount(overrides: Partial<SessionAccount> = {}): SessionAccount {
   return {

@@ -6,25 +6,25 @@ describe('invite URLs', () => {
   describe('getInviteShareUrl', () => {
     it('returns the canonical profile URL for a handle', () => {
       expect(getInviteShareUrl('alice.bsky.social')).toBe(
-        'https://bsky.app/profile/alice.bsky.social',
+        'https://itsmyturn.online/profile/alice.bsky.social',
       )
     })
 
     it('preserves custom domains', () => {
       expect(getInviteShareUrl('thepope.dev')).toBe(
-        'https://bsky.app/profile/thepope.dev',
+        'https://itsmyturn.online/profile/thepope.dev',
       )
     })
 
     it('strips a leading @ if present', () => {
       expect(getInviteShareUrl('@alice.bsky.social')).toBe(
-        'https://bsky.app/profile/alice.bsky.social',
+        'https://itsmyturn.online/profile/alice.bsky.social',
       )
     })
 
     it('passes the handle through verbatim (handles are API-normalized, like makeProfileLink)', () => {
       expect(getInviteShareUrl('Alice.Bsky.Social')).toBe(
-        'https://bsky.app/profile/Alice.Bsky.Social',
+        'https://itsmyturn.online/profile/Alice.Bsky.Social',
       )
     })
 

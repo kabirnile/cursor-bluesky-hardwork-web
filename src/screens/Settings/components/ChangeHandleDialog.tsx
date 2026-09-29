@@ -281,7 +281,7 @@ function ProvidedHandlePage({
                     context: `english-only-resource`,
                   }),
                 )}
-                to="https://bsky.social/about/blog/4-28-2023-domain-handle-tutorial"
+                to="https://pds.itsmyturn.online/about/blog/4-28-2023-domain-handle-tutorial"
                 style={[a.font_semi_bold]}
                 disableMismatchWarning>
                 Learn more here.

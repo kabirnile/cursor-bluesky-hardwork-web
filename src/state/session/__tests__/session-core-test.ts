@@ -130,17 +130,17 @@ function makeSessionData(overrides: Partial<SessionData> = {}): SessionData {
     emailConfirmed: true,
     emailAuthFactor: false,
     active: true,
-    service: 'https://bsky.social',
+    service: 'https://pds.itsmyturn.online',
     ...overrides,
   }
 }
 
 describe('sessionDataToSessionAccount', () => {
   it('returns undefined for a missing session', () => {
-    expect(sessionDataToSessionAccount(undefined, 'https://bsky.social')).toBe(
+    expect(sessionDataToSessionAccount(undefined, 'https://pds.itsmyturn.online')).toBe(
       undefined,
     )
-    expect(sessionDataToSessionAccount(null, 'https://bsky.social')).toBe(
+    expect(sessionDataToSessionAccount(null, 'https://pds.itsmyturn.online')).toBe(
       undefined,
     )
   })
@@ -148,10 +148,10 @@ describe('sessionDataToSessionAccount', () => {
   it('maps fields for a hosted account (no didDoc)', () => {
     const account = sessionDataToSessionAccount(
       makeSessionData(),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     expect(account).toEqual({
-      service: 'https://bsky.social/',
+      service: 'https://pds.itsmyturn.online/',
       did: DID,
       handle: HANDLE,
       email: 'alice@example.com',
@@ -170,15 +170,15 @@ describe('sessionDataToSessionAccount', () => {
   it('serializes service as a normalized URL', () => {
     const account = sessionDataToSessionAccount(
       makeSessionData(),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
-    expect(account.service).toBe('https://bsky.social/')
+    expect(account.service).toBe('https://pds.itsmyturn.online/')
   })
 
   it('serializes the didDoc PDS endpoint as a normalized URL', () => {
     const account = sessionDataToSessionAccount(
       makeSessionData({didDoc: synthDidDoc(DID, PDS_URL)}),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     expect(account.pdsUrl).toBe(`${PDS_URL}/`)
   })
@@ -186,7 +186,7 @@ describe('sessionDataToSessionAccount', () => {
   it('leaves pdsUrl undefined for hosted accounts (no service fallback)', () => {
     const account = sessionDataToSessionAccount(
       makeSessionData({didDoc: undefined}),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     expect(account.pdsUrl).toBe(undefined)
   })
@@ -194,7 +194,7 @@ describe('sessionDataToSessionAccount', () => {
   it('retains the stored PDS when a valid didDoc has no PDS service', () => {
     const account = sessionDataToSessionAccount(
       makeSessionData({didDoc: {id: DID}}),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
       PDS_URL,
     )!
     expect(account.pdsUrl).toBe(`${PDS_URL}/`)
@@ -203,7 +203,7 @@ describe('sessionDataToSessionAccount', () => {
   it('derives isSelfHosted from the service URL', () => {
     const hosted = sessionDataToSessionAccount(
       makeSessionData(),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     expect(hosted.isSelfHosted).toBe(false)
 
@@ -217,13 +217,13 @@ describe('sessionDataToSessionAccount', () => {
   it('derives signupQueued from the access token scope', () => {
     const queued = sessionDataToSessionAccount(
       makeSessionData({accessJwt: 'queued-access-jwt'}),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     expect(queued.signupQueued).toBe(true)
 
     const notQueued = sessionDataToSessionAccount(
       makeSessionData(),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     expect(notQueued.signupQueued).toBe(false)
   })
@@ -235,7 +235,7 @@ describe('sessionDataToSessionAccount', () => {
         emailConfirmed: undefined,
         emailAuthFactor: undefined,
       }),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     expect(account.email).toBe(undefined)
     expect(account.emailConfirmed).toBe(false)
@@ -249,10 +249,10 @@ describe('sessionDataToSessionAccount', () => {
      */
     const account = sessionDataToSessionAccount(
       makeSessionData({didDoc: synthDidDoc(DID, PDS_URL)}),
-      'https://bsky.social',
+      'https://pds.itsmyturn.online',
     )!
     const golden: SessionAccount = {
-      service: 'https://bsky.social/',
+      service: 'https://pds.itsmyturn.online/',
       did: DID,
       handle: HANDLE,
       email: 'alice@example.com',
@@ -273,7 +273,7 @@ describe('sessionDataToSessionAccount', () => {
 
 describe('sessionAccountToSessionData', () => {
   const baseAccount: SessionAccount = {
-    service: 'https://bsky.social/',
+    service: 'https://pds.itsmyturn.online/',
     did: DID,
     handle: HANDLE,
     email: 'alice@example.com',
@@ -300,7 +300,7 @@ describe('sessionAccountToSessionData', () => {
     expect(data.active).toBe(true)
     expect(data.did).toBe(DID)
     expect(data.handle).toBe(HANDLE)
-    expect(data.service).toBe('https://bsky.social/')
+    expect(data.service).toBe('https://pds.itsmyturn.online/')
   })
 
   it('omits didDoc when the account has no stored pdsUrl', () => {
@@ -631,14 +631,14 @@ describe('disposeBundle kill-switch', () => {
      * promise's rejection (the real network is unavailable under jest); we only
      * care that no synchronous throw happened here.
      */
-    const pending = injectedFetch('https://bsky.social/xrpc/x')
+    const pending = injectedFetch('https://pds.itsmyturn.online/xrpc/x')
     expect(pending).toBeInstanceOf(Promise)
     void pending.catch(() => {})
 
     disposeBundle(bundle)
 
     /* after disposal every call through the injected fetch throws */
-    expect(() => injectedFetch('https://bsky.social/xrpc/x')).toThrow(
+    expect(() => injectedFetch('https://pds.itsmyturn.online/xrpc/x')).toThrow(
       'session disposed',
     )
   })

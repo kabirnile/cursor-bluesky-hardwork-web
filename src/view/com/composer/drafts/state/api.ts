@@ -607,7 +607,7 @@ export async function draftToComposerPosts(
       if (post.embedRecords && post.embedRecords.length > 0) {
         const record = post.embedRecords[0]
         const urip = new AtUri(record.record.uri)
-        const url = `https://bsky.app/profile/${urip.host}/post/${urip.rkey}`
+        const url = `https://itsmyturn.online/profile/${urip.host}/post/${urip.rkey}`
         embed.quote = {type: 'link', uri: url as UriString}
       }
 

@@ -14,7 +14,7 @@ describe('parseLinkingUrl', () => {
 
   it('should correctly parse standard URLs', () => {
     const url =
-      'https://bsky.app/intent/age-assurance?result=success&actorDid=did:example:123'
+      'https://itsmyturn.online/intent/age-assurance?result=success&actorDid=did:example:123'
     const urlp = parseLinkingUrl(url)
     expect(urlp.protocol).toBe('https:')
     expect(urlp.host).toBe('bsky.app')

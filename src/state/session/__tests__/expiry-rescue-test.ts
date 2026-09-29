@@ -8,7 +8,7 @@ import {type SessionAccount} from '../types'
 
 function makeAccount(overrides: Partial<SessionAccount> = {}): SessionAccount {
   return {
-    service: 'https://bsky.social',
+    service: 'https://pds.itsmyturn.online',
     did: 'did:plc:example123',
     handle: 'alice.test',
     email: 'alice@example.com',

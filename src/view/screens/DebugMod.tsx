@@ -342,10 +342,10 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
       }),
     })
     mockedProfile.did = did
-    mockedProfile.avatar = 'https://bsky.social/about/images/favicon-32x32.png'
+    mockedProfile.avatar = 'https://pds.itsmyturn.online/about/images/favicon-32x32.png'
     // @ts-expect-error ProfileViewBasic is close enough -esb
     mockedProfile.banner =
-      'https://bsky.social/about/images/social-card-default-gradient.png'
+      'https://pds.itsmyturn.online/about/images/social-card-default-gradient.png'
     return mockedProfile
   }, [scenario, target, label, isSelfLabel, did, isFollowing, currentAccount])
 
@@ -387,9 +387,9 @@ export const DebugModScreen = ({}: NativeStackScreenProps<
             images: [
               {
                 thumb:
-                  'https://bsky.social/about/images/social-card-default-gradient.png',
+                  'https://pds.itsmyturn.online/about/images/social-card-default-gradient.png',
                 fullsize:
-                  'https://bsky.social/about/images/social-card-default-gradient.png',
+                  'https://pds.itsmyturn.online/about/images/social-card-default-gradient.png',
                 alt: '',
               },
             ],

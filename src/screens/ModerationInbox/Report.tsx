@@ -49,7 +49,7 @@ export function ModerationInboxReportDetailsScreen() {
               you’d rather not see it, you can mute or block the account. Read
               our{' '}
               <InlineLinkText
-                to="https://bsky.social/about/support/community-guidelines"
+                to="https://pds.itsmyturn.online/about/support/community-guidelines"
                 label={l`Read our Community Guidelines`}
                 style={[a.text_md]}>
                 Community Guidelines

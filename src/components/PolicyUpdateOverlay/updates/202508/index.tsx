@@ -27,27 +27,27 @@ export function Content({state}: {state: PolicyUpdateState}) {
   const links = {
     terms: {
       overridePresentation: false,
-      to: `https://bsky.social/about/support/tos`,
+      to: `https://pds.itsmyturn.online/about/support/tos`,
       label: _(msg`Terms of Service`),
     },
     privacy: {
       overridePresentation: false,
-      to: `https://bsky.social/about/support/privacy-policy`,
+      to: `https://pds.itsmyturn.online/about/support/privacy-policy`,
       label: _(msg`Privacy Policy`),
     },
     copyright: {
       overridePresentation: false,
-      to: `https://bsky.social/about/support/copyright`,
+      to: `https://pds.itsmyturn.online/about/support/copyright`,
       label: _(msg`Copyright Policy`),
     },
     guidelines: {
       overridePresentation: false,
-      to: `https://bsky.social/about/support/community-guidelines`,
+      to: `https://pds.itsmyturn.online/about/support/community-guidelines`,
       label: _(msg`Community Guidelines`),
     },
     blog: {
       overridePresentation: false,
-      to: `https://bsky.social/about/blog/08-14-2025-updated-terms-and-policies`,
+      to: `https://pds.itsmyturn.online/about/blog/08-14-2025-updated-terms-and-policies`,
       label: _(msg`Our blog post`),
     },
   }

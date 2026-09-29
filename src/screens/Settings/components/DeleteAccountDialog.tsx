@@ -340,7 +340,7 @@ function DeleteAccountDialogInner({
                 </Span>{' '}
                 and all associated data. Note that this will affect any other{' '}
                 <SimpleInlineLinkText
-                  to="https://bsky.social/about/faq"
+                  to="https://pds.itsmyturn.online/about/faq"
                   label={_(msg`AT Protocol FAQ`)}>
                   AT Protocol
                 </SimpleInlineLinkText>{' '}

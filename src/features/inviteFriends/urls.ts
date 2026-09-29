@@ -2,7 +2,7 @@
  * URL helpers for the Invite Friends share sheet (APP-2142).
  *
  * Every action (QR payload, share sheet, clipboard) and the displayed label
- * all derive from the same canonical `https://bsky.app/profile/{handle}` URL,
+ * all derive from the same canonical `https://itsmyturn.online/profile/{handle}` URL,
  * so what the user reads matches exactly what they copy/share. The displayed
  * label simply drops the `https://` scheme for readability.
  *
@@ -18,7 +18,7 @@ function stripLeadingAt(handle: string): string {
 export function getInviteShareUrl(handle: string): string {
   const bare = stripLeadingAt(handle)
   if (!bare) return ''
-  return `https://bsky.app/profile/${bare}`
+  return `https://itsmyturn.online/profile/${bare}`
 }
 
 /**

@@ -209,7 +209,7 @@ export function Takendown() {
                   Your account was found to be in violation of the{' '}
                   <SimpleInlineLinkText
                     label={_(msg`Bluesky Social Terms of Service`)}
-                    to="https://bsky.social/about/support/tos"
+                    to="https://pds.itsmyturn.online/about/support/tos"
                     style={[a.text_md, a.leading_snug]}>
                     Bluesky Social Terms of Service
                   </SimpleInlineLinkText>
